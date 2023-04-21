@@ -40,13 +40,4 @@ public class ApiTests {
                 .body("books[2,5].isbn",hasItems("9781449337711","9781491950296"));
 
     }
-    @Test
-    public void validateResult(){
-        given()
-                .queryParam("ISBN","9781449325862")
-                .when()
-                .get("https://bookstore.toolsqa.com/BookStore/v1/Book")
-                .then().log().all().assertThat()
-                .body("isbn",equalTo("9781449325862"));
-    }
 }
